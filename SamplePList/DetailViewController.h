@@ -11,5 +11,7 @@
 @interface DetailViewController : UIViewController
 
 @property (nonatomic,strong) NSDictionary *friendsList;
+@property (weak, nonatomic) IBOutlet UITextView *textViewForFriends;
+@property (weak, nonatomic) IBOutlet UILabel *areaTitle;
 
 @end

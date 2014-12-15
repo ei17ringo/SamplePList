@@ -19,6 +19,21 @@
     // Do any additional setup after loading the view.
     
     NSLog(@"%@",self.friendsList);
+    
+    NSArray *friendListforTextView = [self.friendsList objectForKey:@"FriendList"];
+    
+    NSString *strNameList = @"";
+    
+    //高速列挙でデータを取り出して文字列変数にセット
+    for (NSString *friend_name in friendListforTextView) {
+        strNameList = [NSString stringWithFormat:@"%@%@",strNameList,friend_name];
+    }
+    
+    self.textViewForFriends.text = strNameList;
+    
+    NSString *areaName = [self.friendsList objectForKey:@"Name"];
+    
+    self.areaTitle.text = [NSString stringWithFormat:@"%@のお友達",areaName];
 }
 
 - (void)didReceiveMemoryWarning {
